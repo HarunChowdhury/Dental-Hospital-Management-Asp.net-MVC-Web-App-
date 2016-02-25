@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DHMS01.Models.AppointmentCreate>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Serial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhonNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProblemId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VTime.Time1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhonNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VAppType.AppType1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VProblem.Problem1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AppointmentCreateId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AppointmentCreateId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentCreateId })
+        </td>
+    </tr>
+}
+
+</table>

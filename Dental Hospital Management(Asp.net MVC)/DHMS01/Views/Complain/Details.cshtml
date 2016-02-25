@@ -1,0 +1,26 @@
+﻿@model DHMS01.Models.Complain
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Complain</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ComplainId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

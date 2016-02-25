@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DHMS01.Models.ChiefComplain>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+    <table class="table table-bordered" id="CustomTableBulding">
+        <tr>
+            <th>Chief Complain</th>
+            <th>At</th>
+            <th>Durations(Days)</th>
+            <th>Reason</th>
+            <th>Comment</th>
+            <th>Edit/Details/Delete</th>
+
+        </tr>
+
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VComplains.ComplainName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VAts.AtName)
+               
+                </td>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reason)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Complain)
+                </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ChiefComplainId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ChiefComplainId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ChiefComplainId })
+                </td>
+            </tr>
+        }
+    </table>
+
+
+
+
+

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<DHMS01.Models.PatientPersonalInfo>
+@using System.Linq;
+@*@model PagedList.IPagedList<DHMS01.Models.PatientPersonalInfo>
+@using PagedList.Mvc;*@
+
+  @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+  }
+
+
+  @{
+    ViewBag.Title = "PatientSearchForm";
+  }
+
+<h2>Patient Search Form</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    
+    
+    @*<link href="~/Content/PagedList.css" rel="stylesheet" />*@
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    
+   
+
+</head>
+
+
+    <body>
+       @using (Html.BeginForm("PatientSearchForm", "PatientPersonalInfo", FormMethod.Get))
+            {
+
+                    <b>
+                        Search Option:
+                    </b>
+                    @Html.RadioButton("option", "Name") <text>Name</text> 
+                    @Html.RadioButton("option", "MobilePhone") <text> Phone </text>
+                    @Html.RadioButton("option", "PresentAddress")<text>Address</text>
+                    
+                    @Html.TextBox("search")
+                    <input type ="submit" name ="submit" value ="Search" />
+              
+            }  
+        
+        <br>
+
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+
+            </tr>
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.Name)</td>
+                    <td>@Html.DisplayFor(m => item.MobilePhone)</td>
+                    <td>@Html.DisplayFor(m => item.PresentAddress)</td>   
+
+                </tr>
+
+            }
+
+
+        </table>
+  
+        <script src="~/Scripts/jquery-2.1.4.js"></script>
+        <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+   
+   
+    </body>
+</html>

@@ -1,0 +1,66 @@
+﻿@model DHMS01.Models.ChiefComplain
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChiefComplain</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Complain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplainId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComplainId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AtId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AtId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ChiefComplainId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

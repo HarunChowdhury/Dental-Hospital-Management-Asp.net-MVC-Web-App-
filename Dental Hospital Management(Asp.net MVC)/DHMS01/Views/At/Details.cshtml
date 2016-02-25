@@ -1,0 +1,26 @@
+﻿@model DHMS01.Models.At
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>At</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AtName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AtName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AtId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
